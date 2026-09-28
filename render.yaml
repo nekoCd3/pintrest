@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: prox-meot-dev
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    domains:
+      - prox.meot.dev
+    envVars:
+      - key: PROXY_USERNAME
+        sync: false
+      - key: PROXY_PASSWORD
+        sync: false
